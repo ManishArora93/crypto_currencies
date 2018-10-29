@@ -13,7 +13,11 @@
   <body>
     <% unless current_user %> 
     <% else %>
-      <%= "Welcome" + " " + current_user[:name] %>
+      <% if current_user[:name].present? %>
+        <%= "Welcome" + " " + current_user[:name] %>
+      <% else %>
+        <%= "Welcome User" %>
+      <% end %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "primary-btn pull-right" %>
     <% end %>
     <%= yield %>
