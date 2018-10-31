@@ -10,8 +10,8 @@ class CurrenciesController < ApplicationController
     		format.json { render json: @currencies } # For Testing purpose
   		  format.html # show.html.slim
       end
-    rescue
-      p "Something went wrong"
+    rescue Exception => e
+      puts e.message
     end
   end
 end
