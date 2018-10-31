@@ -1,28 +1,30 @@
-h1.center
-  = "Top Currencies"
-table
-  thead
-	  th
-	    = "Rank"
-	  th 
-	    = "Currency Code"
-	  th 
-	    = "Currency Name"
-	  th 
-	    = "Market Cap"
-	  th
-	    = "Value(USD)"
-  tbody
-    - @currencies.each do |currency|
-      tr
-        td
-          = currency.rank.to_i
-        td
-          = currency.symbol
-        td
-          = currency.name
-        td
-          = currency.market_cap
-        td
-          = currency.price
-  end
+- if @currencies.present?
+  h1.center
+    = "Top Currencies"
+  table
+    thead
+  	  th
+  	    = "Rank"
+  	  th 
+  	    = "Currency Code"
+  	  th 
+  	    = "Currency Name"
+  	  th 
+  	    = "Market Cap"
+  	  th
+  	    = "Value(USD)"
+    tbody
+      - @currencies.each do |currency|
+        tr
+          td
+            = currency.rank.to_i
+          td
+            = currency.symbol
+          td
+            = currency.name
+          td
+            = currency.market_cap
+          td
+            = currency.price
+- else
+  = "Not able to fetch currencies"

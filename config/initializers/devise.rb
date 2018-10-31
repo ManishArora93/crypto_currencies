@@ -287,6 +287,6 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-  # Facebook Login
+  # Facebook Login, kept both the secret keys openly available to make review possible.
   config.omniauth :facebook, "321338612000200", "d7537fd4f2f98e07ffcd0373d923d994", callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end
